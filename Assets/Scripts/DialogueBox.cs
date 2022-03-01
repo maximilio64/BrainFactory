@@ -21,8 +21,6 @@ public class DialogueBox : MonoBehaviour
     {
         displayText = GetComponentInChildren<Text>();
         displayBox = GetComponent<Image>();
-
-        dialogueStrings.Enqueue("The desert, so desolate, yet maybe my mind will find inspiration in the introspection one gains from looking into nothingness.");
     }
 
     private void Update()

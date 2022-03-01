@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform leftFootCheck;
     public Transform rightFootCheck;
+    public Transform forwardCheck;
+    public Transform backwardCheck;
 
     public enum ConveyerDirection { none, left, right }
     public ConveyerDirection conveyerDirection = ConveyerDirection.none;
@@ -35,14 +37,16 @@ public class PlayerController : MonoBehaviour
 
     bool BothFeetOnGround()
     {
-        return Physics.CheckSphere(leftFootCheck.position, 0.15f, groundLayer) && Physics.CheckSphere(rightFootCheck.position, 0.15f, groundLayer);
+        return Physics.CheckSphere(leftFootCheck.position, 0.15f, groundLayer) && Physics.CheckSphere(rightFootCheck.position, 0.15f, groundLayer) && Physics.CheckSphere(forwardCheck.position, 0.15f, groundLayer) && Physics.CheckSphere(backwardCheck.position, 0.15f, groundLayer);
     }
 
     // Update is called once per frame
     void Update()
     {
         float hInput = Input.GetAxis("Horizontal");
+        float vInput = Input.GetAxis("Vertical");
         direction.x = hInput * speed;
+        direction.z = vInput * speed;
 
         switch (conveyerDirection)
         {
@@ -91,6 +95,19 @@ public class PlayerController : MonoBehaviour
                 meshRenderer.enabled = true;
         } else
             meshRenderer.enabled = true;
+
+        if (transform.position.y < -2)
+            TeleportToSafety();
+    }
+
+    void TeleportToSafety()
+    {
+        controller.enabled = false;
+        control.ChangeLives(-1);
+        invincibleTimer += 20;
+        transform.position = lastSafePosition;
+        direction = new Vector3(0, 0, 0);
+        controller.enabled = true;
     }
 
     float invincibleTimer = 0f;
@@ -100,11 +117,7 @@ public class PlayerController : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "hurt_teleport":
-                controller.enabled = false;
-                control.ChangeLives(-1);
-                invincibleTimer += 20;
-                transform.position = lastSafePosition;
-                controller.enabled = true;
+                TeleportToSafety();
                 break;
         }
     }
