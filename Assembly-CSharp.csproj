@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1C4E5067-5EA3-F091-12B3-FE42AA633208}</ProjectGuid>
+    <ProjectGuid>{90557767-1450-C198-0199-85AE3DC03E1E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,10 +56,12 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/PlayerController.cs" />
     <Compile Include="Assets/Scripts/Control.cs" />
     <Compile Include="Assets/Scripts/ZAxisFreeze.cs" />
+    <Compile Include="Assets/Scripts/PlayerController.cs" />
     <Compile Include="Assets/Scripts/Conveyer.cs" />
+    <Compile Include="Assets/Scripts/DialogueBox.cs" />
+    <Compile Include="Assets/Scripts/DialogueCue.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

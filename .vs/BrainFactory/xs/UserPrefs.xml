@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{90557767-1450-C198-0199-85AE3DC03E1E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueCue.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Conveyer.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="61" Column="51" />
+      <File FileName="Assets/Scripts/DialogueBox.cs" Line="20" Column="159" />
+      <File FileName="Assets/Scripts/DialogueCue.cs" Line="7" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BrainFactory" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="DialogueCue.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5c609041-a05c-4c6b-ac4c-bd16e632b200" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

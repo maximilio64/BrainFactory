@@ -9,11 +9,17 @@ public class Conveyer : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            collision.gameObject.GetComponent<CharacterController>().enabled = false;
-            collision.gameObject.transform.localPosition += new Vector3(.1f, 0, 0);
-            collision.gameObject.GetComponent<CharacterController>().enabled = true;
+            (collision.gameObject.GetComponent<PlayerController>() as PlayerController).conveyerDirection = PlayerController.ConveyerDirection.right;
         }
         else
             collision.gameObject.transform.position += new Vector3(.1f,0,0);
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            (collision.gameObject.GetComponent<PlayerController>() as PlayerController).conveyerDirection = PlayerController.ConveyerDirection.none;
+        }
     }
 }
