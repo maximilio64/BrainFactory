@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
     public Transform forwardCheck;
     public Transform backwardCheck;
 
+    public Transform cameraRotator;
+    public Transform cameraRotatorDummy;
+
+    public Transform meshTransform;
+
     public enum ConveyerDirection { none, left, right }
     public ConveyerDirection conveyerDirection = ConveyerDirection.none;
 
@@ -30,7 +35,17 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         control = GameObject.Find("Control").GetComponent<Control>();
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshTransform = transform.Find("Mesh");
+        meshRenderer = transform.Find("Mesh").GetComponent<MeshRenderer>();
+        cameraRotator = GameObject.Find("CameraRotator").transform;
+        cameraRotatorDummy = GameObject.Find("CameraRotatorDummy").transform;
+    }
+
+    private Transform GetCameraRotation()
+    {
+        cameraRotatorDummy.eulerAngles = cameraRotator.eulerAngles;
+        cameraRotatorDummy.eulerAngles = new Vector3(0, cameraRotator.eulerAngles.y, 0);
+        return cameraRotatorDummy;
     }
 
     public bool isGrounded;
@@ -45,8 +60,6 @@ public class PlayerController : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
-        direction.x = hInput * speed;
-        direction.z = vInput * speed;
 
         switch (conveyerDirection)
         {
@@ -83,6 +96,16 @@ public class PlayerController : MonoBehaviour
             }
         }
         controller.Move(direction * Time.deltaTime);
+
+        Vector3 walkDirection = new Vector3();
+        //walkDirection.x = hInput * speed;
+        //walkDirection.z = vInput * speed;
+        Transform currentCameraRot = GetCameraRotation();
+        walkDirection += currentCameraRot.right * hInput * speed;
+        walkDirection += currentCameraRot.forward * vInput * speed;
+        controller.Move(walkDirection * Time.deltaTime);
+
+        meshTransform.localRotation = Quaternion.LookRotation(walkDirection);
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
 

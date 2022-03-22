@@ -62,6 +62,7 @@
     <Compile Include="Assets/Scripts/Conveyer.cs" />
     <Compile Include="Assets/Scripts/DialogueBox.cs" />
     <Compile Include="Assets/Scripts/DialogueCue.cs" />
+    <Compile Include="Assets/Scripts/CameraMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

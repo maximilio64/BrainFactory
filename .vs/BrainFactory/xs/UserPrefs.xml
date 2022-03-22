@@ -2,16 +2,19 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
       <File FileName="Assets/Scripts/Conveyer.cs" Line="26" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="61" Column="51" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="108" Column="62" />
       <File FileName="Assets/Scripts/DialogueBox.cs" />
-      <File FileName="Assets/Scripts/DialogueCue.cs" Line="12" Column="17" />
+      <File FileName="Assets/Scripts/DialogueCue.cs" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" Line="24" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BrainFactory" expanded="True">
-            <Node name="Assets" expanded="True" selected="True">
-              <Node name="Scripts" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="PlayerController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -20,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="854ba3dc-49a3-417f-a0ee-5feda1d8839d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4248b749-7eab-460f-935c-d8a62e060f5d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
