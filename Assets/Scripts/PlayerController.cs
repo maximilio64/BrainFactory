@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour
     {
         control = GameObject.Find("Control").GetComponent<Control>();
         meshTransform = transform.Find("Mesh");
-        meshRenderer = transform.Find("Mesh").GetComponent<MeshRenderer>();
-        cameraRotator = GameObject.Find("CameraRotator").transform;
-        cameraRotatorDummy = GameObject.Find("CameraRotatorDummy").transform;
+        meshRenderer = meshTransform.GetComponent<MeshRenderer>();
+        cameraRotator = transform.Find("CameraRotator").transform;
+        cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
     }
 
     private Transform GetCameraRotation()
@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
+
+        direction.x = 0;
 
         switch (conveyerDirection)
         {
