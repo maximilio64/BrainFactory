@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        control = GameObject.Find("Control").GetComponent<Control>();
+        control = GetComponent<Control>();
         meshTransform = transform.Find("Mesh");
         meshRenderer = meshTransform.GetComponent<MeshRenderer>();
         cameraRotator = transform.Find("CameraRotator").transform;
