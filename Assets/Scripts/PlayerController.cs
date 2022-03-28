@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
-    public MeshRenderer meshRenderer;
     public Vector3 direction;
     public float speed = 8;
     public float jumpForce = 10;
@@ -29,14 +28,14 @@ public class PlayerController : MonoBehaviour
 
     private Control control;
 
+    public Animator animator;
+
     public bool ableToMakeADoubleJump = true;
 
     // Start is called before the first frame update
     void Start()
     {
         control = GetComponent<Control>();
-        meshTransform = transform.Find("Mesh");
-        meshRenderer = meshTransform.GetComponent<MeshRenderer>();
         cameraRotator = transform.Find("CameraRotator").transform;
         cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
     }
@@ -87,6 +86,8 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 direction.y = jumpForce;
+                animator.SetTrigger("Jump");
+
             }
         } else
         {
@@ -94,6 +95,7 @@ public class PlayerController : MonoBehaviour
             if (ableToMakeADoubleJump && Input.GetButtonDown("Jump"))
             {
                 direction.y = jumpForce;
+                animator.SetTrigger("Jump");
                 ableToMakeADoubleJump = false;
             }
         }
@@ -107,6 +109,8 @@ public class PlayerController : MonoBehaviour
         walkDirection += currentCameraRot.forward * vInput * speed;
         controller.Move(walkDirection * Time.deltaTime);
 
+        animator.SetFloat("speed", walkDirection.magnitude / 10f);
+
         meshTransform.localRotation = Quaternion.LookRotation(walkDirection);
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
@@ -115,11 +119,11 @@ public class PlayerController : MonoBehaviour
         if (invincibleTimer > 0)
         {
             if (invincibleTimer % 10 > 5 && invincibleTimer > 10)
-                meshRenderer.enabled = false;
+                meshTransform.gameObject.SetActive(false);
             else
-                meshRenderer.enabled = true;
+                meshTransform.gameObject.SetActive(true);
         } else
-            meshRenderer.enabled = true;
+            meshTransform.gameObject.SetActive(true);
 
         if (transform.position.y < -2)
             TeleportToSafety();

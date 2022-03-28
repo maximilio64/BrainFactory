@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
       <File FileName="Assets/Scripts/Conveyer.cs" Line="26" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="37" Column="19" />
       <File FileName="Assets/Scripts/DialogueBox.cs" />
       <File FileName="Assets/Scripts/DialogueCue.cs" />
       <File FileName="Assets/Scripts/CameraMovement.cs" />
-      <File FileName="Assets/Scripts/Control.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyFollow.cs" Line="15" Column="76" />
+      <File FileName="Assets/Scripts/Control.cs" />
+      <File FileName="Assets/Scripts/EnemyFollow.cs" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="126" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7e649c2d-a86f-4caa-a19e-42e5308c709e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2535593a-9710-4550-805b-fff9929b16d5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
