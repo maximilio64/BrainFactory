@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = -20;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public LayerMask mushroomLayer;
     public Vector3 lastSafePosition;
 
     public Transform leftFootCheck;
@@ -54,6 +55,11 @@ public class PlayerController : MonoBehaviour
         return Physics.CheckSphere(leftFootCheck.position, 0.15f, groundLayer) && Physics.CheckSphere(rightFootCheck.position, 0.15f, groundLayer) && Physics.CheckSphere(forwardCheck.position, 0.15f, groundLayer) && Physics.CheckSphere(backwardCheck.position, 0.15f, groundLayer);
     }
 
+    bool OnMushroom()
+    {
+        return Physics.CheckSphere(leftFootCheck.position, 0.15f, mushroomLayer) || Physics.CheckSphere(rightFootCheck.position, 0.15f, mushroomLayer) || Physics.CheckSphere(forwardCheck.position, 0.15f, mushroomLayer) || Physics.CheckSphere(backwardCheck.position, 0.15f, mushroomLayer);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -73,6 +79,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
+
+        if (OnMushroom())
+        {
+            direction.y = 30;
+            animator.SetTrigger("Jump");
+            ableToMakeADoubleJump = true;
+        }
 
         if (BothFeetOnGround())
         {

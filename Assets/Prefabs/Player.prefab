@@ -387,6 +387,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  mushroomLayer:
+    serializedVersion: 2
+    m_Bits: 512
   lastSafePosition: {x: 0, y: 0, z: 0}
   leftFootCheck: {fileID: 1328044290988308343}
   rightFootCheck: {fileID: 1328044291395424764}
