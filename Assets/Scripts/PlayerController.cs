@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public Transform cameraRotator;
     public Transform cameraRotatorDummy;
 
+    public Vector3 enemyLaunch = new Vector3();
+
     public Transform meshTransform;
 
     public enum ConveyerDirection { none, left, right }
@@ -30,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private Control control;
 
     public Animator animator;
+
+    public GameObject explosion;
 
     public bool ableToMakeADoubleJump = true;
 
@@ -65,6 +69,13 @@ public class PlayerController : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
+
+        if (Input.GetKeyDown("e"))
+        {
+            GameObject e = Instantiate(explosion);
+            e.transform.SetParent(this.transform);
+            e.transform.localPosition = new Vector3(0, 1f, 0);
+        }
 
         direction.x = 0;
 
@@ -122,6 +133,9 @@ public class PlayerController : MonoBehaviour
         walkDirection += currentCameraRot.forward * vInput * speed;
         controller.Move(walkDirection * Time.deltaTime);
 
+        controller.Move(enemyLaunch * Time.deltaTime);
+        enemyLaunch = Vector3.MoveTowards(enemyLaunch, new Vector3(0, 0, 0), Time.deltaTime * 10f);
+
         animator.SetFloat("speed", walkDirection.magnitude / 10f);
 
         meshTransform.localRotation = Quaternion.LookRotation(walkDirection);
@@ -152,7 +166,7 @@ public class PlayerController : MonoBehaviour
         controller.enabled = true;
     }
 
-    float invincibleTimer = 0f;
+    public float invincibleTimer = 0f;
 
     private void OnTriggerEnter(Collider collision)
     {

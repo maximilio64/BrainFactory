@@ -21,5 +21,19 @@ public class Control : MonoBehaviour
     private void Start()
     {
         SetLivesText();
+        SetOrbsText();
+    }
+
+    public Text orbsText;
+    public int orbs = 0;
+
+    void SetOrbsText()
+    {
+        orbsText.text = "Orbs: " + orbs;
+    }
+    public void ChangeOrbs(int amount)
+    {
+        orbs += amount;
+        SetOrbsText();
     }
 }

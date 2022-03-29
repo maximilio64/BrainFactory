@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hurt_teleport
   - hurt
+  - kill_enemy
   layers:
   - Default
   - TransparentFX
