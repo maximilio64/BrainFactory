@@ -18,6 +18,9 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemy.SetDestination(player.position);
+        if (Vector3.Distance(transform.position, player.position) <= 25f)
+            enemy.SetDestination(player.position);
+        else
+            enemy.SetDestination(transform.position);
     }
 }

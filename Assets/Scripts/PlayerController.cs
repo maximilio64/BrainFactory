@@ -14,10 +14,16 @@ public class PlayerController : MonoBehaviour
     public LayerMask mushroomLayer;
     public Vector3 lastSafePosition;
 
+    public AudioClip after;
+
     public Transform leftFootCheck;
     public Transform rightFootCheck;
     public Transform forwardCheck;
     public Transform backwardCheck;
+
+    Quaternion nonzeroWalkRotation;
+
+    public bool hasPowerup = false;
 
     public Transform cameraRotator;
     public Transform cameraRotatorDummy;
@@ -52,6 +58,12 @@ public class PlayerController : MonoBehaviour
         return cameraRotatorDummy;
     }
 
+    public void changeMusic()
+    {
+        GetComponent<AudioSource>().clip = after;
+        GetComponent<AudioSource>().Play();
+    }
+
     public bool isGrounded;
 
     bool BothFeetOnGround()
@@ -64,13 +76,18 @@ public class PlayerController : MonoBehaviour
         return Physics.CheckSphere(leftFootCheck.position, 0.15f, mushroomLayer) || Physics.CheckSphere(rightFootCheck.position, 0.15f, mushroomLayer) || Physics.CheckSphere(forwardCheck.position, 0.15f, mushroomLayer) || Physics.CheckSphere(backwardCheck.position, 0.15f, mushroomLayer);
     }
 
+    public void playCoinSound()
+    {
+        transform.Find("ground check").GetComponent<AudioSource>().Play();
+    }
+
     // Update is called once per frame
     void Update()
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown("e"))
+        if (hasPowerup && Input.GetKeyDown("e"))
         {
             GameObject e = Instantiate(explosion);
             e.transform.SetParent(this.transform);
@@ -96,6 +113,7 @@ public class PlayerController : MonoBehaviour
             direction.y = 30;
             animator.SetTrigger("Jump");
             ableToMakeADoubleJump = true;
+            meshTransform.GetComponent<AudioSource>().Play();
         }
 
         if (BothFeetOnGround())
@@ -125,12 +143,14 @@ public class PlayerController : MonoBehaviour
         }
         controller.Move(direction * Time.deltaTime);
 
+        float runMultiplier = (Input.GetKey("left shift")) ? 2f : 1f;
+
         Vector3 walkDirection = new Vector3();
         //walkDirection.x = hInput * speed;
         //walkDirection.z = vInput * speed;
         Transform currentCameraRot = GetCameraRotation();
-        walkDirection += currentCameraRot.right * hInput * speed;
-        walkDirection += currentCameraRot.forward * vInput * speed;
+        walkDirection += currentCameraRot.right * hInput * speed * runMultiplier;
+        walkDirection += currentCameraRot.forward * vInput * speed * runMultiplier;
         controller.Move(walkDirection * Time.deltaTime);
 
         controller.Move(enemyLaunch * Time.deltaTime);
@@ -138,7 +158,13 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("speed", walkDirection.magnitude / 10f);
 
+        if (walkDirection.magnitude != 0)
+            nonzeroWalkRotation = meshTransform.localRotation;
+
         meshTransform.localRotation = Quaternion.LookRotation(walkDirection);
+
+        if (walkDirection.magnitude == 0)
+            meshTransform.localRotation = nonzeroWalkRotation;
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
 
