@@ -57,17 +57,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/EnemyFollow.cs" />
+    <Compile Include="Assets/Scripts/Worm.cs" />
     <Compile Include="Assets/Scripts/Control.cs" />
     <Compile Include="Assets/Scripts/ZAxisFreeze.cs" />
-    <Compile Include="Assets/Scripts/FungusEnemy.cs" />
+    <Compile Include="Assets/Scripts/Clocks/Ticker.cs" />
+    <Compile Include="Assets/Scripts/Enemy.cs" />
+    <Compile Include="Assets/Scripts/Clocks/Tick.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
+    <Compile Include="Assets/Scripts/Clocks/Clock.cs" />
     <Compile Include="Assets/Scripts/Conveyer.cs" />
     <Compile Include="Assets/Scripts/CameraMovement.cs" />
+    <Compile Include="Assets/Scripts/FlyingEnemy.cs" />
     <Compile Include="Assets/Scripts/Orbs.cs" />
     <Compile Include="Assets/Scripts/DialogueBox.cs" />
+    <Compile Include="Assets/Scripts/MovingPlatform.cs" />
     <Compile Include="Assets/Scripts/ExportTerrain.cs" />
+    <Compile Include="Assets/Scripts/SC_MovingPlatform.cs" />
     <Compile Include="Assets/Scripts/DialogueCue.cs" />
     <Compile Include="Assets/Scripts/Explosion.cs" />
+    <Compile Include="Assets/Scripts/CoinTimeChallenge/CoinTimeChallenge.cs" />
+    <Compile Include="Assets/Scripts/CoinTimeChallenge/ChallengeStart.cs" />
+    <Compile Include="Assets/Scripts/CoinTimeChallenge/Coin.cs" />
+    <Compile Include="Assets/Scripts/SaveData.cs" />
+    <Compile Include="Assets/Scripts/PlatformPower.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Samples/Terrain Tools/0.1.0-preview/Terrain Assets/ThirdPartyNotices.txt" />

@@ -9,17 +9,17 @@ public class Conveyer : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            (collision.gameObject.GetComponent<PlayerController>() as PlayerController).conveyerDirection = PlayerController.ConveyerDirection.right;
+            (collision.gameObject.GetComponent<PlayerController>() as PlayerController).conveyerDirection = transform.right * 1f;
         }
         else
-            collision.gameObject.transform.position += new Vector3(.1f,0,0);
+            collision.gameObject.transform.position += transform.right * Time.deltaTime * 1f;
     }
 
     private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            (collision.gameObject.GetComponent<PlayerController>() as PlayerController).conveyerDirection = PlayerController.ConveyerDirection.none;
+            (collision.gameObject.GetComponent<PlayerController>() as PlayerController).conveyerDirection = new Vector3(0, 0, 0);
         }
     }
 }

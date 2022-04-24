@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = -20;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public LayerMask unsafeGroundLayer;
     public LayerMask mushroomLayer;
     public Vector3 lastSafePosition;
 
@@ -23,8 +24,6 @@ public class PlayerController : MonoBehaviour
 
     Quaternion nonzeroWalkRotation;
 
-    public bool hasPowerup = false;
-
     public Transform cameraRotator;
     public Transform cameraRotatorDummy;
 
@@ -32,16 +31,19 @@ public class PlayerController : MonoBehaviour
 
     public Transform meshTransform;
 
-    public enum ConveyerDirection { none, left, right }
-    public ConveyerDirection conveyerDirection = ConveyerDirection.none;
+    public Vector3 conveyerDirection = new Vector3(0,0,0);
 
     private Control control;
 
     public Animator animator;
 
     public GameObject explosion;
+    public GameObject platform;
+    public GameObject currentPlatformRef;
 
     public bool ableToMakeADoubleJump = true;
+
+    float powerupCoolDown = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -87,24 +89,30 @@ public class PlayerController : MonoBehaviour
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
 
-        if (hasPowerup && Input.GetKeyDown("e"))
+        powerupCoolDown -= Time.deltaTime;
+        if (powerupCoolDown < 0)
+            powerupCoolDown = 0;
+
+        if (powerupCoolDown <= 0 && SaveData.HasAttackPower && Input.GetKeyDown("e"))
         {
+            powerupCoolDown = 5;
             GameObject e = Instantiate(explosion);
             e.transform.SetParent(this.transform);
             e.transform.localPosition = new Vector3(0, 1f, 0);
         }
+        if (SaveData.hasPlatformPower && Input.GetKeyDown("q"))
+        {
+            powerupCoolDown = 5;
+            GameObject e = Instantiate(platform);
+            e.transform.position = transform.position + new Vector3(0, 0, 0);
+            e.transform.rotation = meshTransform.localRotation;
+            e.transform.position += e.transform.forward * 10;
+        }
 
         direction.x = 0;
+        direction.z = 0;
 
-        switch (conveyerDirection)
-        {
-            case ConveyerDirection.left:
-                direction.x -= 5;
-                break;
-            case ConveyerDirection.right:
-                direction.x += 5;
-                break;
-        }
+        direction += conveyerDirection;
 
         //isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
 
@@ -166,7 +174,7 @@ public class PlayerController : MonoBehaviour
         if (walkDirection.magnitude == 0)
             meshTransform.localRotation = nonzeroWalkRotation;
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer) || Physics.CheckSphere(groundCheck.position, 0.15f, unsafeGroundLayer);
 
         invincibleTimer = Mathf.MoveTowards(invincibleTimer, 0f, Time.deltaTime * 40f);
         if (invincibleTimer > 0)
@@ -186,7 +194,7 @@ public class PlayerController : MonoBehaviour
     {
         controller.enabled = false;
         control.ChangeLives(-1);
-        invincibleTimer += 20;
+        invincibleTimer = 100;
         transform.position = lastSafePosition;
         direction = new Vector3(0, 0, 0);
         controller.enabled = true;

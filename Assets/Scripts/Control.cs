@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class Control : MonoBehaviour
 {
     public Text livesText;
-    public int lives = 3;
 
     void SetLivesText()
     {
-        livesText.text = "Lives: " + lives;
+        livesText.text = "Lives: " + SaveData.lives;
     }
     public void ChangeLives(int amount)
     {
-        lives += amount;
+        SaveData.lives += amount;
         SetLivesText();
     }
 
@@ -25,15 +24,14 @@ public class Control : MonoBehaviour
     }
 
     public Text orbsText;
-    public int orbs = 0;
 
     void SetOrbsText()
     {
-        orbsText.text = "Orbs: " + orbs;
+        orbsText.text = "Orbs: " + SaveData.orbs;
     }
     public void ChangeOrbs(int amount)
     {
-        orbs += amount;
+        SaveData.orbs += amount;
         SetOrbsText();
     }
 }

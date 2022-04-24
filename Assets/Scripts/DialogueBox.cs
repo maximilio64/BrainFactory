@@ -9,7 +9,8 @@ public class DialogueBox : MonoBehaviour
 
     public void AddDialogue(string d)
     {
-        dialogueStrings.Enqueue(d);
+        if (dialogueStrings.Count == 0 || d != dialogueStrings.Peek()) //dont add duplicate dialogue
+            dialogueStrings.Enqueue(d);
     }
 
     Text displayText;

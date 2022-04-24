@@ -5,8 +5,6 @@ using UnityEngine;
 public class Orbs : MonoBehaviour
 {
 
-    public bool isPowerup = false;
-
     DialogueBox dialogueBox;
 
     Control control;
@@ -29,19 +27,9 @@ public class Orbs : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            if (!isPowerup)
-            {
-                control.ChangeOrbs(1);
-                playerController.playCoinSound();
-                Destroy(this.gameObject);
-            } else
-            {
-                dialogueBox.AddDialogue("I feel stronger. Press e to release a vital aura.");
-                Destroy(this.gameObject);
-                playerController.hasPowerup = true;
-                playerController.changeMusic();
-            }
-
+            control.ChangeOrbs(1);
+            playerController.playCoinSound();
+            Destroy(this.gameObject);
         }
     }
 
