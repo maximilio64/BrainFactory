@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         if (powerupCoolDown < 0)
             powerupCoolDown = 0;
 
-        if (powerupCoolDown <= 0 && SaveData.HasAttackPower && Input.GetKeyDown("e"))
+        if (powerupCoolDown <= 0 && SaveData.hasAttackPower && Input.GetKeyDown("e"))
         {
             powerupCoolDown = 5;
             GameObject e = Instantiate(explosion);
