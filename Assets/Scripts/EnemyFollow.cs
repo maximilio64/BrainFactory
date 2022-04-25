@@ -13,6 +13,7 @@ public class EnemyFollow : MonoBehaviour
     {
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<PlayerController>().transform;
+        enemy.Warp(transform.position);
     }
 
     // Update is called once per frame

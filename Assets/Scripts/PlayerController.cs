@@ -107,6 +107,8 @@ public class PlayerController : MonoBehaviour
             e.transform.position = transform.position + new Vector3(0, 0, 0);
             e.transform.rotation = meshTransform.localRotation;
             e.transform.position += e.transform.forward * 10;
+
+            //animator.SetTrigger("sew");
         }
 
         direction.x = 0;
