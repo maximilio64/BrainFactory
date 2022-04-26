@@ -6,6 +6,12 @@ public class Explosion : MonoBehaviour
 {
     float scale = 0;
 
+    public int id;
+    public void SetID(int i)
+    {
+        id = i;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

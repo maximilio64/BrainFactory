@@ -7,7 +7,7 @@ public static class SaveData
     //powerups
     public static bool hasDoubleJumpPower = true;
 
-    public static bool hasAttackPower = false;
+    public static bool hasAttackPower = true;
     public static bool hasAttackPowerUpgrade = true;
 
     public static bool hasPlatformPower = true;
@@ -22,6 +22,10 @@ public static class SaveData
         if (hasPlatformPower) score++;
         if (hasPlatformPowerUpgrade) score++;
         return score;
+    }
+
+    public static int TotalPossibleScore() {
+        return 5;
     }
 
     //collectables

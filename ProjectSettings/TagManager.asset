@@ -7,6 +7,8 @@ TagManager:
   - hurt_teleport
   - hurt
   - kill_enemy
+  - Floor
+  - junk
   layers:
   - Default
   - TransparentFX

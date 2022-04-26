@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 89295870354242579}
   - component: {fileID: 4868498333405699721}
   - component: {fileID: 1070130337084434003}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,6 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d7858940cd44f42b3d6e5442af1e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderers: []
+  meshColliders: []
 --- !u!1 &5677423687626556752
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +82,7 @@ GameObject:
   - component: {fileID: 1231063674454840404}
   - component: {fileID: 1265402525360039573}
   - component: {fileID: 3687701017163691315}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +194,7 @@ GameObject:
   - component: {fileID: 8431545785407077177}
   - component: {fileID: 8431545785407077179}
   - component: {fileID: 8431545785407077178}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fungus Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

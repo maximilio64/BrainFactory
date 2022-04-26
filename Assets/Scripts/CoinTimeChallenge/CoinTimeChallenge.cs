@@ -20,6 +20,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
 
     public void BeginChallenge()
     {
+        GameObject.Find("Player/CameraRotator/Main Camera").GetComponent<PlayerTicker>().active = true;
         doingChallenge = true;
         currentTime = maxTimeLimit;
         currentCoins = 0;
@@ -40,6 +41,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
             platform.SetActive(true);
             challengeText.text = "";
             doingChallenge = false;
+            GameObject.Find("Player/CameraRotator/Main Camera").GetComponent<PlayerTicker>().active = false;
         }
     }
 
@@ -58,6 +60,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
                 challengeText.text = "";
                 challengeStart.gameObject.SetActive(true);
                 doingChallenge = false;
+                GameObject.Find("Player/CameraRotator/Main Camera").GetComponent<PlayerTicker>().active = false;
             }
         }
     }

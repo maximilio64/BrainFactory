@@ -83,6 +83,8 @@ public class PlayerController : MonoBehaviour
         transform.Find("ground check").GetComponent<AudioSource>().Play();
     }
 
+    int explodeNum = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -97,6 +99,9 @@ public class PlayerController : MonoBehaviour
         {
             powerupCoolDown = 5;
             GameObject e = Instantiate(explosion);
+            e.GetComponent<Explosion>().SetID(explodeNum);
+            Debug.Log(explodeNum);
+            explodeNum++;
             e.transform.SetParent(this.transform);
             e.transform.localPosition = new Vector3(0, 1f, 0);
         }
