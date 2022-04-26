@@ -69,7 +69,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
 
     public void UpdateDisplay()
     {
-        challengeText.text = currentTime + " " + currentCoins + "/" + totalCoins;
+        challengeText.text = currentTime + "\n" + currentCoins + "/" + totalCoins;
     }
 
     // Start is called before the first frame update

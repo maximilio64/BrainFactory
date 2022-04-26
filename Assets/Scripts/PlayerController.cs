@@ -88,6 +88,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isImmobile = animator.GetCurrentAnimatorStateInfo(0).IsName("Sew");
+
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
 
