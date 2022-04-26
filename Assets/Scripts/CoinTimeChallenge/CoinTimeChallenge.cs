@@ -14,6 +14,8 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
     Coin[] coins;
     ChallengeStart challengeStart;
 
+    DialogueBox dialogueBox;
+
     GameObject platform;
 
     bool won = false;
@@ -38,6 +40,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
 
         if (currentCoins == totalCoins)
         {
+            dialogueBox.AddDialogue("I’ve manifested a bridge to new places!");
             platform.SetActive(true);
             challengeText.text = "";
             doingChallenge = false;
@@ -86,6 +89,11 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
 
         platform = transform.Find("Platform").gameObject;
         platform.SetActive(false);
+    }
+
+    private void Start()
+    {
+        dialogueBox = FindObjectOfType<DialogueBox>();
     }
 
     // Update is called once per frame

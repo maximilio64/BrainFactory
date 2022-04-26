@@ -13,13 +13,13 @@ public static class SaveData
     //public static bool hasPlatformPower = true;
     //public static bool hasPlatformPowerUpgrade = true;
 
-    public static bool hasDoubleJumpPower = false;
+    public static bool hasDoubleJumpPower = true;
 
-    public static bool hasAttackPower = false;
-    public static bool hasAttackPowerUpgrade = false;
+    public static bool hasAttackPower = true;
+    public static bool hasAttackPowerUpgrade = true;
 
-    public static bool hasPlatformPower = false;
-    public static bool hasPlatformPowerUpgrade = false;
+    public static bool hasPlatformPower = true;
+    public static bool hasPlatformPowerUpgrade = true;
 
     public static int FactoryScore()
     {

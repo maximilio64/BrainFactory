@@ -43,9 +43,13 @@ public class Powerup : MonoBehaviour
             switch (powerupType)
             {
                 case PowerupType.attack:
-                    SaveData.hasAttackPower = true; break;
+                    SaveData.hasAttackPower = true;
+                    dialogueBox.AddDialogue("I feel stronger now, that I can overcome this place. Press e to release a vital aura.");
+                    break;
                 case PowerupType.platform:
-                    SaveData.hasPlatformPower = true; break;
+                    SaveData.hasPlatformPower = true;
+                    dialogueBox.AddDialogue("This place is no longer an empty void, but a blank canvas. I can manifest anything I want out of life. Press q to manifest.");
+                    break;
             }
             playerController.transform.Find("WalkModel").GetComponent<Animator>().SetTrigger("sew");
             playerController.playCoinSound();
