@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{90557767-1450-C198-0199-85AE3DC03E1E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CoinTimeChallenge/CoinTimeChallenge.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SaveData.cs">
     <Files>
       <File FileName="Assets/MazeGenerator/Scripts/MazeSpawner.cs" Line="97" Column="3" IsPinned="True" />
       <File FileName="Assets/Scripts/Conveyer.cs" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="91" Column="80" />
+      <File FileName="Assets/Scripts/PlayerController.cs" />
       <File FileName="Assets/Scripts/DialogueBox.cs" />
       <File FileName="Assets/Scripts/DialogueCue.cs" />
       <File FileName="Assets/Scripts/CameraMovement.cs" />
       <File FileName="Assets/Scripts/EnemyFollow.cs" />
       <File FileName="Assets/Scripts/Explosion.cs" />
-      <File FileName="Assets/Scripts/Control.cs" />
+      <File FileName="Assets/Scripts/Control.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/FlyingEnemy.cs" />
       <File FileName="Assets/Scripts/Enemy.cs" />
       <File FileName="Assets/Scripts/MovingPlatform.cs" />
@@ -23,12 +23,12 @@
       <File FileName="Assets/Scripts/InverseMesh/AddInvertedMeshCollider.cs" />
       <File FileName="Assets/Editor/AddInvertedMeshColliderEditor.cs" />
       <File FileName="Assets/Scripts/CoinTimeChallenge/ChallengeStart.cs" Line="34" Column="14" />
-      <File FileName="Assets/Scripts/CoinTimeChallenge/Coin.cs" />
+      <File FileName="Assets/Scripts/CoinTimeChallenge/Coin.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Orbs.cs" />
-      <File FileName="Assets/Scripts/Powerup.cs" Line="38" Column="1" />
+      <File FileName="Assets/Scripts/Powerup.cs" Line="48" Column="61" />
       <File FileName="Assets/MazeGenerator/Scripts/MazeCell.cs" />
       <File FileName="Assets/MazeGenerator/Prefabs/FloorSpawner.cs" />
-      <File FileName="Assets/Scripts/SaveData.cs" />
+      <File FileName="Assets/Scripts/SaveData.cs" Line="38" Column="1" />
       <File FileName="Assets/Scripts/BrainChange/Change.cs" />
       <File FileName="Assets/Scripts/BrainChange/Lightbulb.cs" />
       <File FileName="Assets/Scripts/DoorOpen.cs" />
@@ -37,8 +37,9 @@
       <File FileName="Assets/Scripts/Clocks/PlayerTicker.cs" />
       <File FileName="Assets/MazeGenerator/Prefabs/WallCutter.cs" />
       <File FileName="Assets/Scripts/LineOfSightEnemyFollow.cs" />
-      <File FileName="Assets/Scripts/JunkSpawner.cs" />
+      <File FileName="Assets/Scripts/JunkSpawner.cs" Line="28" Column="38" />
       <File FileName="Assets/Scripts/Portal.cs" Line="14" Column="47" />
+      <File FileName="Assets/Scripts/Title.cs" Line="13" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -50,9 +51,8 @@
                 <Node name="Scripts" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="CoinTimeChallenge" expanded="True">
-                  <Node name="CoinTimeChallenge.cs" selected="True" />
-                </Node>
+                <Node name="CoinTimeChallenge" expanded="True" />
+                <Node name="SaveData.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -62,7 +62,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d4d56a79-8323-4e40-ad21-290d51e8c0ef" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6bb7dec4-464a-4919-86e5-b7f339d5f39a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

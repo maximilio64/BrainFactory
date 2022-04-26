@@ -24,8 +24,8 @@ public class JunkSpawner : MonoBehaviour
 
             GameObject newObject;
 
-            //if (Random.value < ratio)
-            if (Random.value < .5f)
+            if (Random.value < ratio)
+            //if (Random.value < .5f)
             {
                 newObject = Instantiate(good[Random.Range(0, good.Count)]);
             } else

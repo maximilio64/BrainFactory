@@ -44,6 +44,8 @@ public class Powerup : MonoBehaviour
             {
                 case PowerupType.attack:
                     SaveData.hasAttackPower = true; break;
+                case PowerupType.platform:
+                    SaveData.hasPlatformPower = true; break;
             }
             playerController.transform.Find("WalkModel").GetComponent<Animator>().SetTrigger("sew");
             playerController.playCoinSound();
