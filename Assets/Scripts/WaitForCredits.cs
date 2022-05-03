@@ -19,6 +19,7 @@ public class WaitForCredits : MonoBehaviour
 
     IEnumerator wait()
     {
+        SaveData.completedCredits = true;
         yield return new WaitForSeconds(27f);
         SaveData.playerBrainStartLoc = new Vector3(-87.8170776f, 178.330002f, -114.744286f);
         SceneManager.LoadScene("Brain");

@@ -13,13 +13,15 @@ public static class SaveData
     //public static bool hasPlatformPower = true;
     //public static bool hasPlatformPowerUpgrade = true;
 
-    public static bool hasDoubleJumpPower = true;
+    public static bool hasDoubleJumpPower = false;
 
     public static bool hasAttackPower = false;
-    public static bool hasAttackPowerUpgrade = true;
+    public static bool hasAttackPowerUpgrade = false;
 
-    public static bool hasPlatformPower = true;
-    public static bool hasPlatformPowerUpgrade = true;
+    public static bool hasPlatformPower = false;
+    public static bool hasPlatformPowerUpgrade = false;
+
+    public static bool completedCredits = false;
 
     public static List<string> pastDialogue = new List<string>();
 
@@ -30,12 +32,13 @@ public static class SaveData
 
     public static int FactoryScore()
     {
-        int score = 0;
+        int score = 2;
         if (hasDoubleJumpPower) score++;
         if (hasAttackPower) score++;
         if (hasAttackPowerUpgrade) score++;
         if (hasPlatformPower) score++;
         if (hasPlatformPowerUpgrade) score++;
+        if (completedCredits) score++;
         return score;
     }
 
@@ -43,9 +46,19 @@ public static class SaveData
         return 5;
     }
 
+    public static float Ratio()
+    {
+        return (float)TotalPossibleScore() / (float)FactoryScore();
+    }
+
+    public static float Ratio2()
+    {
+        return ((float)FactoryScore() - 2) / ((float)TotalPossibleScore()-2);
+    }
+
     //collectables
     public static int lives = 3;
-    public static int orbs = 50;
+    public static int orbs = 0;
 
     public static int usedOrbs = 0;
 }

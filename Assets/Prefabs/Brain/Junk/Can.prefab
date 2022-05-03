@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 187461050107052397}
   - component: {fileID: 1538097423767004236}
   - component: {fileID: 1538097423767004235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Can
   m_TagString: junk
   m_Icon: {fileID: 0}

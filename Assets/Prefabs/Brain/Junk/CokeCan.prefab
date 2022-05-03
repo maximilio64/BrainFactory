@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7407992663892690827}
   - component: {fileID: 8146993815813677784}
   - component: {fileID: 8146993815813677785}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CokeCan
   m_TagString: junk
   m_Icon: {fileID: 0}

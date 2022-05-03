@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5324056194754986413}
   - component: {fileID: 6783350433174734385}
   - component: {fileID: 6783350433174734386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bottlecap
   m_TagString: junk
   m_Icon: {fileID: 0}

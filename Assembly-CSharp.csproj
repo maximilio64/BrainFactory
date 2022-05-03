@@ -60,6 +60,7 @@
     <Compile Include="Assets/MazeGenerator/Scripts/RollerBall.cs" />
     <Compile Include="Assets/Scripts/Worm.cs" />
     <Compile Include="Assets/Scripts/WaitForCredits.cs" />
+    <Compile Include="Assets/Scripts/FloatUpAndDown.cs" />
     <Compile Include="Assets/Scripts/DoorOpen.cs" />
     <Compile Include="Assets/Scripts/CoinTimeChallenge/CoinTimeChallenge.cs" />
     <Compile Include="Assets/MazeGenerator/Scripts/BasicMazeGenerator.cs" />
@@ -104,9 +105,8 @@
     <Compile Include="Assets/Scripts/Portal.cs" />
     <Compile Include="Assets/MazeGenerator/Scripts/OldestTreeMazeGenerator.cs" />
     <Compile Include="Assets/Scripts/Explosion.cs" />
-    <Compile Include="Assets/MazeGenerator/Scripts/RecursiveTreeMazeGenerator.cs" />
     <Compile Include="Assets/Scripts/DialogueCueIfHaveEnough.cs" />
-    <Compile Include="Assets/Scripts/FloatUpAndDown.cs" />
+    <Compile Include="Assets/MazeGenerator/Scripts/RecursiveTreeMazeGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Samples/Terrain Tools/0.1.0-preview/Terrain Assets/ThirdPartyNotices.txt" />

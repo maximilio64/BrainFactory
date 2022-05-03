@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5646773836703267581}
   - component: {fileID: 2955217899830633293}
   - component: {fileID: -4380247459685492561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: JunkOrb
   m_TagString: junk
   m_Icon: {fileID: 0}

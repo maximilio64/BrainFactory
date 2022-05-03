@@ -61,6 +61,8 @@ public class Powerup : MonoBehaviour
             }
             playerController.transform.Find("WalkModel").GetComponent<Animator>().SetTrigger("sew");
             playerController.playCoinSound();
+            playerController.GetComponent<AudioSource>().clip = playerController.after;
+            playerController.GetComponent<AudioSource>().Play();
             SaveData.deletePowerupsWithTheseIDs.Add(powerID);
             Destroy(this.gameObject);
         }

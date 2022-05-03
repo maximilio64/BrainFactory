@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 lastSafePosition;
     public GameObject placedOrbPrefab;
 
+    public AudioClip before;
     public AudioClip after;
 
     public Transform leftFootCheck;
@@ -53,6 +54,20 @@ public class PlayerController : MonoBehaviour
         control = GetComponent<Control>();
         cameraRotator = transform.Find("CameraRotator").transform;
         cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
+
+        if (SceneManager.GetActiveScene().name == "Brain" && SaveData.Ratio() >= 1)
+        {
+            GetComponent<AudioSource>().clip = after;
+            GetComponent<AudioSource>().Play();
+        } else if (SceneManager.GetActiveScene().name == "Mushroom" && SaveData.hasAttackPower)
+        {
+            GetComponent<AudioSource>().clip = after;
+            GetComponent<AudioSource>().Play();
+        } else if (SceneManager.GetActiveScene().name == "Desert" && SaveData.hasPlatformPower)
+        {
+            GetComponent<AudioSource>().clip = after;
+            GetComponent<AudioSource>().Play();
+        }
 
         StartCoroutine(LateStart());
     }

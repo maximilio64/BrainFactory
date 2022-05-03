@@ -12,7 +12,7 @@ public class JunkSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ratio = SaveData.FactoryScore() / SaveData.TotalPossibleScore();
+        ratio = SaveData.Ratio2();
         StartCoroutine(spawningTrash());
     }
 
@@ -24,6 +24,7 @@ public class JunkSpawner : MonoBehaviour
 
             GameObject newObject;
 
+            Random.seed = System.DateTime.Now.Millisecond;
             if (Random.value < ratio)
             //if (Random.value < .5f)
             {
