@@ -22,8 +22,16 @@ public class Powerup : MonoBehaviour
 
     PlayerController playerController;
 
+    public int powerID;
+    public void Reset()
+    {
+        powerID = UnityEngine.Random.Range(1, 10000) * GetInstanceID();
+    }
+
     private void Start()
     {
+        if (SaveData.deletePowerupsWithTheseIDs.Contains(powerID))
+            Destroy(this.gameObject);
         control = (Control)GameObject.FindObjectOfType<Control>();
         centralPos = transform.position;
 
@@ -44,15 +52,16 @@ public class Powerup : MonoBehaviour
             {
                 case PowerupType.attack:
                     SaveData.hasAttackPower = true;
-                    dialogueBox.AddDialogue("I feel stronger now, that I can overcome this place. Press e to release a vital aura.");
+                    dialogueBox.AddDialogue("I feel stronger now, that I can overcome this place. Press e to release a vital aura.", true);
                     break;
                 case PowerupType.platform:
                     SaveData.hasPlatformPower = true;
-                    dialogueBox.AddDialogue("This place is no longer an empty void, but a blank canvas. I can manifest anything I want out of life. Press q to manifest.");
+                    dialogueBox.AddDialogue("This place is no longer an empty void, but a blank canvas. I can manifest anything I want out of life. Press q to manifest.", true);
                     break;
             }
             playerController.transform.Find("WalkModel").GetComponent<Animator>().SetTrigger("sew");
             playerController.playCoinSound();
+            SaveData.deletePowerupsWithTheseIDs.Add(powerID);
             Destroy(this.gameObject);
         }
     }

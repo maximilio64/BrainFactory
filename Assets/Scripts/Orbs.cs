@@ -13,8 +13,16 @@ public class Orbs : MonoBehaviour
 
     PlayerController playerController;
 
+    public int coinID;
+    public void Reset()
+    {
+        coinID = UnityEngine.Random.Range(1, 10000) * GetInstanceID();
+    }
+
     private void Start()
     {
+        if (SaveData.deleteObjectsWithTheseIDs.Contains(coinID))
+            Destroy(this.gameObject);
         control = (Control)GameObject.FindObjectOfType<Control>();
         centralPos = transform.position;
 
@@ -29,6 +37,7 @@ public class Orbs : MonoBehaviour
         {
             control.ChangeOrbs(1);
             playerController.playCoinSound();
+            SaveData.deleteObjectsWithTheseIDs.Add(coinID);
             Destroy(this.gameObject);
         }
     }

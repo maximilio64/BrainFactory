@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1434429243194159598}
   - component: {fileID: 1434429243194159597}
   - component: {fileID: 1434429243194159596}
-  - component: {fileID: 1434429243194159592}
+  - component: {fileID: 398738723279347773}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Untagged
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1434429243194159592
+--- !u!114 &398738723279347773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,4 +108,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2784d8bb316fd4b8dafb161c62c2c341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPowerup: 0

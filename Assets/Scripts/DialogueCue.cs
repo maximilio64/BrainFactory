@@ -6,6 +6,8 @@ public class DialogueCue : MonoBehaviour
 {
     [SerializeField]
     public string dialogueString;
+    [SerializeField]
+    public bool neverRepeat = true;
 
     DialogueBox dialogueBox;
     // Start is called before the first frame update
@@ -17,7 +19,7 @@ public class DialogueCue : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            dialogueBox.AddDialogue(dialogueString);
+            dialogueBox.AddDialogue(dialogueString, neverRepeat);
             Destroy(this.gameObject);
         }
     }

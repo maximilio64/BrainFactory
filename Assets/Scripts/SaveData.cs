@@ -21,6 +21,13 @@ public static class SaveData
     public static bool hasPlatformPower = true;
     public static bool hasPlatformPowerUpgrade = true;
 
+    public static List<string> pastDialogue = new List<string>();
+
+    public static List<int> deleteObjectsWithTheseIDs = new List<int>();
+    public static List<int> deletePowerupsWithTheseIDs = new List<int>();
+
+    public static Vector3 playerBrainStartLoc = new Vector3(-176.550003f, 14.2799997f, -108.690002f);
+
     public static int FactoryScore()
     {
         int score = 0;
@@ -38,5 +45,5 @@ public static class SaveData
 
     //collectables
     public static int lives = 3;
-    public static int orbs = 0;
+    public static int orbs = 50;
 }

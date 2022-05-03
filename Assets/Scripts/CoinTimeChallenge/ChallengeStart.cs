@@ -28,11 +28,11 @@ public class ChallengeStart : MonoBehaviour
         {
             if (transform.parent.GetComponent<CoinTimeChallenge>().challengeText.text != "")
             {
-                dialogueBox.AddDialogue("I should complete the other time challenge I started first.");
+                dialogueBox.AddDialogue("I should complete the other time challenge I started first.", false);
             }
             else
             {
-                dialogueBox.AddDialogue("Collect the spice of life before it disappears!");
+                dialogueBox.AddDialogue("Collect the spice of life before it disappears!", false);
                 transform.parent.GetComponent<CoinTimeChallenge>().BeginChallenge();
                 this.gameObject.SetActive(false);
             }

@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 7452573669568578395}
   - component: {fileID: 30089477099246253}
   - component: {fileID: 612961267951137715}
-  - component: {fileID: 4672360632845130694}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: BezierCurve
-  m_TagString: hurt_teleport
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,20 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4672360632845130694
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4912028322570329060}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 150581138598605843, guid: edfe4285741b847f48fc94890bb8e314, type: 3}
 --- !u!1 &5482823497782800850
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,9 +90,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5142326000670108520}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: SpikeyVine
-  m_TagString: hurt_teleport
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,9 +124,9 @@ GameObject:
   - component: {fileID: 2482570520426900397}
   - component: {fileID: 5805898670972854641}
   - component: {fileID: 9223344867636100978}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: SPIKES
-  m_TagString: hurt_teleport
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

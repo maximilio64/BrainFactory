@@ -40,7 +40,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
 
         if (currentCoins == totalCoins)
         {
-            dialogueBox.AddDialogue("I’ve manifested a bridge to new places!");
+            dialogueBox.AddDialogue("I’ve manifested a bridge to new places!", false);
             platform.SetActive(true);
             challengeText.text = "";
             doingChallenge = false;

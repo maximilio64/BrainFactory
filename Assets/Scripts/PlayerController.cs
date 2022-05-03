@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask unsafeGroundLayer;
     public LayerMask mushroomLayer;
     public Vector3 lastSafePosition;
+    public GameObject placedOrbPrefab;
 
     public AudioClip after;
 
@@ -51,6 +53,19 @@ public class PlayerController : MonoBehaviour
         control = GetComponent<Control>();
         cameraRotator = transform.Find("CameraRotator").transform;
         cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
+
+        switch(SceneManager.GetActiveScene().name)
+        {
+            case "Brain":
+                transform.position = SaveData.playerBrainStartLoc;
+                break;
+            case "Dark":
+                SaveData.playerBrainStartLoc = new Vector3(-185.389999f, 22.75f, -163.899994f); break;
+            case "Mushroom":
+                SaveData.playerBrainStartLoc = new Vector3(-150.788498f, 105.209999f, -94.3528976f); break;
+            case "Desert":
+                SaveData.playerBrainStartLoc = new Vector3(-67.6256409f, 155.259995f, -97.6285324f); break;
+        }
     }
 
     private Transform GetCameraRotation()
@@ -116,6 +131,12 @@ public class PlayerController : MonoBehaviour
             e.transform.position += e.transform.forward * 10;
 
             //animator.SetTrigger("sew");
+        }
+        if (Input.GetKeyDown("l") && SaveData.orbs > 0 && SceneManager.GetActiveScene().name == "Dark")
+        {
+            GameObject orb = Instantiate(placedOrbPrefab);
+            orb.transform.position = meshTransform.transform.position + new Vector3(0, 5, 0);
+            SaveData.orbs--;
         }
 
         direction.x = 0;

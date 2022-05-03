@@ -1735,6 +1735,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1396175628084959452, guid: c3e362755fa9649e3b904210fa9877e9, type: 3}
     - target: {fileID: 1460997334821222831, guid: 4a380fd088e0642fda310de84b991055, type: 3}
+      propertyPath: powerID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460997334821222831, guid: 4a380fd088e0642fda310de84b991055, type: 3}
       propertyPath: powerupType
       value: 2
       objectReference: {fileID: 0}
@@ -2181,6 +2185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398738723279347773, guid: ad36099a6d0ec4617ad5cb10f18dec1e, type: 3}
+      propertyPath: coinID
+      value: -1344883124
+      objectReference: {fileID: 0}
     - target: {fileID: 1434429243194159599, guid: ad36099a6d0ec4617ad5cb10f18dec1e, type: 3}
       propertyPath: m_RootOrder
       value: 5

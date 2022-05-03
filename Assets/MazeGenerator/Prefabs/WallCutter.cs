@@ -6,7 +6,7 @@ public class WallCutter : MonoBehaviour
 {
     private void LateUpdate()
     {
-        if (transform.localPosition == new Vector3(160, 0, -8) || transform.localPosition == new Vector3(160, 0, 328))
+        if (transform.localPosition == new Vector3(160, 0, 328))
             Destroy(this.gameObject);
     }
 }

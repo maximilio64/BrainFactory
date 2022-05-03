@@ -7,10 +7,15 @@ public class DialogueBox : MonoBehaviour
 {
     private Queue<string> dialogueStrings = new Queue<string>();
 
-    public void AddDialogue(string d)
+    public void AddDialogue(string d, bool neverRepeat)
     {
+        if (neverRepeat && SaveData.pastDialogue.Contains(d))
+            return;
         if (dialogueStrings.Count == 0 || d != dialogueStrings.Peek()) //dont add duplicate dialogue
+        {
             dialogueStrings.Enqueue(d);
+            SaveData.pastDialogue.Add(d);
+        }
     }
 
     Text displayText;

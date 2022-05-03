@@ -667,6 +667,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   lastSafePosition: {x: 0, y: 0, z: 0}
+  placedOrbPrefab: {fileID: 5807380415095832342, guid: 940670f7b6255416c8304be5702b5a07, type: 3}
   after: {fileID: 8300000, guid: 08a4a5562ef4640aaa23d1a27ab216c1, type: 3}
   leftFootCheck: {fileID: 1328044290988308343}
   rightFootCheck: {fileID: 1328044291395424764}
