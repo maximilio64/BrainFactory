@@ -2250,7 +2250,7 @@ PrefabInstance:
     - target: {fileID: 4456873344018035244, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 8450b670e283347d6bee5bd9d1f20d6e, type: 3}
+      objectReference: {fileID: 32900000, guid: 17b8bbe16a0f241f4b33f52242ed7413, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
 --- !u!1001 &807906600
@@ -4190,6 +4190,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ca45232955dc41c0a85a761aaba8f3a, type: 3}
+--- !u!1 &1815126832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537743949703241132, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
+  m_PrefabInstance: {fileID: 1901820517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &1815126833
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815126832}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 031a3f569d60046cf9ab181c429f6db3, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1001 &1823900329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4573,7 +4613,7 @@ PrefabInstance:
     - target: {fileID: 4456873344018035244, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 555aec7df68fe4d0ba17506007dc97e8, type: 3}
+      objectReference: {fileID: 32900000, guid: 031a3f569d60046cf9ab181c429f6db3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
 --- !u!1001 &1922188235
@@ -5631,5 +5671,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4456873344018035244, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 5c4fcec3486cc48199140de7f5b2ee9b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}

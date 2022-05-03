@@ -178,6 +178,7 @@ public class PlayerController : MonoBehaviour
         if (walkDirection.magnitude != 0)
             nonzeroWalkRotation = meshTransform.localRotation;
 
+        transform.localEulerAngles = new Vector3(0, 0, 0);
         meshTransform.localRotation = Quaternion.LookRotation(walkDirection);
 
         if (walkDirection.magnitude == 0)

@@ -1733,7 +1733,7 @@ PrefabInstance:
     - target: {fileID: 1460997334821222831, guid: 4a380fd088e0642fda310de84b991055, type: 3}
       propertyPath: mesh
       value: 
-      objectReference: {fileID: 8079327163991197518, guid: c3e362755fa9649e3b904210fa9877e9, type: 3}
+      objectReference: {fileID: 1396175628084959452, guid: c3e362755fa9649e3b904210fa9877e9, type: 3}
     - target: {fileID: 1460997334821222831, guid: 4a380fd088e0642fda310de84b991055, type: 3}
       propertyPath: powerupType
       value: 2
@@ -3363,9 +3363,49 @@ PrefabInstance:
     - target: {fileID: 4456873344018035244, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 0f9dfc44b82a34539b99b86b62a9348e, type: 3}
+      objectReference: {fileID: 32900000, guid: e1b79adb3cf6d4bbc906c766ad109b61, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
+--- !u!1 &1332314460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537743949703241132, guid: dab89ef5b9af5400d81f30d92d33502d, type: 3}
+  m_PrefabInstance: {fileID: 1332314459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &1332314461
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332314460}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: e1b79adb3cf6d4bbc906c766ad109b61, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1001 &1348101770
 PrefabInstance:
   m_ObjectHideFlags: 0
