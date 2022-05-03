@@ -54,7 +54,14 @@ public class PlayerController : MonoBehaviour
         cameraRotator = transform.Find("CameraRotator").transform;
         cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
 
-        switch(SceneManager.GetActiveScene().name)
+        StartCoroutine(LateStart());
+    }
+
+    IEnumerator LateStart()
+    {
+        yield return null;
+
+        switch (SceneManager.GetActiveScene().name)
         {
             case "Brain":
                 transform.position = SaveData.playerBrainStartLoc;
@@ -105,6 +112,14 @@ public class PlayerController : MonoBehaviour
     {
         bool isImmobile = animator.GetCurrentAnimatorStateInfo(0).IsName("Sew");
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (SceneManager.GetActiveScene().name == "Brain")
+                SceneManager.LoadScene("Title");
+            else
+                SceneManager.LoadScene("Brain");
+        }
+
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
 
@@ -122,7 +137,7 @@ public class PlayerController : MonoBehaviour
             e.transform.SetParent(this.transform);
             e.transform.localPosition = new Vector3(0, 1f, 0);
         }
-        if (SaveData.hasPlatformPower && Input.GetKeyDown("q"))
+        if (powerupCoolDown <= 0 && SaveData.hasPlatformPower && Input.GetKeyDown("q"))
         {
             powerupCoolDown = 5;
             GameObject e = Instantiate(platform);
@@ -136,7 +151,8 @@ public class PlayerController : MonoBehaviour
         {
             GameObject orb = Instantiate(placedOrbPrefab);
             orb.transform.position = meshTransform.transform.position + new Vector3(0, 5, 0);
-            SaveData.orbs--;
+            control.ChangeOrbs(-1);
+            SaveData.usedOrbs++;
         }
 
         direction.x = 0;
@@ -239,6 +255,9 @@ public class PlayerController : MonoBehaviour
         {
             case "hurt_teleport":
                 TeleportToSafety();
+                break;
+            case "end":
+                SceneManager.LoadScene("Credits");
                 break;
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Control : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class Control : MonoBehaviour
     {
         SaveData.lives += amount;
         SetLivesText();
+        if (SaveData.lives <= 0)
+        {
+            SaveData.orbs += SaveData.usedOrbs;
+            SaveData.usedOrbs = 0;
+            SaveData.lives = 3;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void Start()

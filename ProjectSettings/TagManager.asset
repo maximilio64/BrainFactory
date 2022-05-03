@@ -9,6 +9,7 @@ TagManager:
   - kill_enemy
   - Floor
   - junk
+  - end
   layers:
   - Default
   - TransparentFX

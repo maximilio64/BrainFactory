@@ -46,4 +46,6 @@ public static class SaveData
     //collectables
     public static int lives = 3;
     public static int orbs = 50;
+
+    public static int usedOrbs = 0;
 }
