@@ -13,6 +13,8 @@ public class Orbs : MonoBehaviour
 
     PlayerController playerController;
 
+    public bool noID = false; //used only for used orbs currently
+
     public int coinID;
     public void Reset()
     {
@@ -21,7 +23,7 @@ public class Orbs : MonoBehaviour
 
     private void Start()
     {
-        if (SaveData.deleteObjectsWithTheseIDs.Contains(coinID))
+        if (!noID && SaveData.deleteObjectsWithTheseIDs.Contains(coinID))
             Destroy(this.gameObject);
         control = (Control)GameObject.FindObjectOfType<Control>();
         centralPos = transform.position;
@@ -36,6 +38,8 @@ public class Orbs : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             control.ChangeOrbs(1);
+            if (noID)
+                SaveData.usedOrbs--;
             playerController.playCoinSound();
             SaveData.deleteObjectsWithTheseIDs.Add(coinID);
             Destroy(this.gameObject);

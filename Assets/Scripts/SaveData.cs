@@ -15,7 +15,7 @@ public static class SaveData
 
     public static bool hasDoubleJumpPower = true;
 
-    public static bool hasAttackPower = true;
+    public static bool hasAttackPower = false;
     public static bool hasAttackPowerUpgrade = true;
 
     public static bool hasPlatformPower = true;
