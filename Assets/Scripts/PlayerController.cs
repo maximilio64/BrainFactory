@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+
         control = GetComponent<Control>();
         cameraRotator = transform.Find("CameraRotator").transform;
         cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
