@@ -51,18 +51,35 @@ public class Powerup : MonoBehaviour
             switch (powerupType)
             {
                 case PowerupType.attack:
-                    SaveData.hasAttackPower = true;
-                    dialogueBox.AddDialogue("I feel stronger now, that I can overcome this place. Press e to release a vital aura.", true);
+                    if (SaveData.hasAttackPower)
+                    {
+                        SaveData.hasAttackPowerUpgrade = true;
+                        dialogueBox.AddDialogue("My vital aura has become even stronger!", true);
+                    }
+                    else
+                    {
+                        SaveData.hasAttackPower = true;
+                        dialogueBox.AddDialogue("I feel stronger now, that I can overcome this place. Press e to release a vital aura.", true);
+                        playerController.GetComponent<AudioSource>().clip = playerController.after;
+                        playerController.GetComponent<AudioSource>().Play();
+                    }
                     break;
                 case PowerupType.platform:
-                    SaveData.hasPlatformPower = true;
-                    dialogueBox.AddDialogue("This place is no longer an empty void, but a blank canvas. I can manifest anything I want out of life. Press q to manifest.", true);
+                    if (SaveData.hasPlatformPower)
+                    {
+                        SaveData.hasPlatformPowerUpgrade = true;
+                        dialogueBox.AddDialogue("My creative powers are expanding!", true);
+                    } else
+                    {
+                        SaveData.hasPlatformPower = true;
+                        dialogueBox.AddDialogue("This place is no longer an empty void, but a blank canvas. I can manifest anything I want out of life. Press q to manifest.", true);
+                        playerController.GetComponent<AudioSource>().clip = playerController.after;
+                        playerController.GetComponent<AudioSource>().Play();
+                    }
                     break;
             }
             playerController.transform.Find("WalkModel").GetComponent<Animator>().SetTrigger("sew");
-            playerController.playCoinSound();
-            playerController.GetComponent<AudioSource>().clip = playerController.after;
-            playerController.GetComponent<AudioSource>().Play();
+            playerController.soundEffectSource.PlayOneShot(playerController.power);
             SaveData.deletePowerupsWithTheseIDs.Add(powerID);
             Destroy(this.gameObject);
         }

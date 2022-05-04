@@ -9,6 +9,7 @@ public class PlatformPower : MonoBehaviour
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame

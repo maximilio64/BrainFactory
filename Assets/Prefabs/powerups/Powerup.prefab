@@ -62,3 +62,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupType: 1
   mesh: {fileID: 4488896513781688909, guid: d0b9cfa0f21414fc0bd4a3147feae9f2, type: 3}
+  powerID: 0

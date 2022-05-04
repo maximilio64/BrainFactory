@@ -20,6 +20,8 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
 
     bool won = false;
 
+    PlayerController playerController;
+
     public void BeginChallenge()
     {
         GameObject.Find("Player/CameraRotator/Main Camera").GetComponent<PlayerTicker>().active = true;
@@ -42,6 +44,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
         {
             dialogueBox.AddDialogue("I’ve manifested a bridge to new places!", false);
             platform.SetActive(true);
+            platform.AddComponent<AudioSource>().PlayOneShot(playerController.bamboo);
             challengeText.text = "";
             doingChallenge = false;
             GameObject.Find("Player/CameraRotator/Main Camera").GetComponent<PlayerTicker>().active = false;
@@ -94,6 +97,7 @@ public class CoinTimeChallenge : MonoBehaviour, Tick
     private void Start()
     {
         dialogueBox = FindObjectOfType<DialogueBox>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame

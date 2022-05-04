@@ -101,11 +101,11 @@
     <Compile Include="Assets/Scripts/ExportTerrain.cs" />
     <Compile Include="Assets/Scripts/LineOfSightEnemyFollow.cs" />
     <Compile Include="Assets/Scripts/SC_MovingPlatform.cs" />
-    <Compile Include="Assets/Scripts/DialogueCue.cs" />
+    <Compile Include="Assets/Scripts/DialogueCue/DialogueCue.cs" />
     <Compile Include="Assets/Scripts/Portal.cs" />
     <Compile Include="Assets/MazeGenerator/Scripts/OldestTreeMazeGenerator.cs" />
     <Compile Include="Assets/Scripts/Explosion.cs" />
-    <Compile Include="Assets/Scripts/DialogueCueIfHaveEnough.cs" />
+    <Compile Include="Assets/Scripts/DialogueCue/DialogueCueIfHaveEnough.cs" />
     <Compile Include="Assets/MazeGenerator/Scripts/RecursiveTreeMazeGenerator.cs" />
   </ItemGroup>
   <ItemGroup>

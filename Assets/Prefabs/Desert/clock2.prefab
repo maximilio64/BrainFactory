@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1753125812202704715}
   - component: {fileID: 8993707830985362827}
   - component: {fileID: 2879612804530681120}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4782025289485531761}
   - component: {fileID: 5032653661699836033}
   - component: {fileID: 5032653661699836038}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: clock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 4210061658244309345}
   - component: {fileID: 3013645892002611553}
   - component: {fileID: 5032653660421262694}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 1130401599575762399}
   - component: {fileID: 2748330940909808453}
   - component: {fileID: 5032653661587472262}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

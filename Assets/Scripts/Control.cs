@@ -14,10 +14,12 @@ public class Control : MonoBehaviour
     }
     public void ChangeLives(int amount)
     {
+        GetComponent<PlayerController>().HurtSound();
         SaveData.lives += amount;
         SetLivesText();
         if (SaveData.lives <= 0)
         {
+            GetComponent<PlayerController>().DeathSound();
             SaveData.orbs += SaveData.usedOrbs;
             SaveData.usedOrbs = 0;
             SaveData.lives = 3;

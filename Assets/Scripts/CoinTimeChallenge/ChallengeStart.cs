@@ -33,6 +33,7 @@ public class ChallengeStart : MonoBehaviour
             else
             {
                 dialogueBox.AddDialogue("Collect the spice of life before it disappears!", false);
+                playerController.soundEffectSource.PlayOneShot(playerController.click);
                 transform.parent.GetComponent<CoinTimeChallenge>().BeginChallenge();
                 this.gameObject.SetActive(false);
             }

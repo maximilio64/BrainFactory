@@ -27,6 +27,7 @@ public class Coin : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             transform.parent.GetComponent<CoinTimeChallenge>().GotCoin();
+            playerController.soundEffectSource.PlayOneShot(playerController.click);
             this.gameObject.SetActive(false);
         }
     }

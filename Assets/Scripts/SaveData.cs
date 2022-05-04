@@ -15,13 +15,13 @@ public static class SaveData
 
     public static bool hasDoubleJumpPower = false;
 
-    public static bool hasAttackPower = false;
-    public static bool hasAttackPowerUpgrade = false;
+    public static bool hasAttackPower = true;
+    public static bool hasAttackPowerUpgrade = true;
 
-    public static bool hasPlatformPower = false;
-    public static bool hasPlatformPowerUpgrade = false;
+    public static bool hasPlatformPower = true;
+    public static bool hasPlatformPowerUpgrade = true;
 
-    public static bool completedCredits = false;
+    public static bool completedCredits = true;
 
     public static List<string> pastDialogue = new List<string>();
 
@@ -32,7 +32,7 @@ public static class SaveData
 
     public static int FactoryScore()
     {
-        int score = 2;
+        int score = 0;
         if (hasDoubleJumpPower) score++;
         if (hasAttackPower) score++;
         if (hasAttackPowerUpgrade) score++;
@@ -53,8 +53,10 @@ public static class SaveData
 
     public static float Ratio2()
     {
-        return ((float)FactoryScore() - 2) / ((float)TotalPossibleScore()-2);
+        return ((float)FactoryScore()) / ((float)TotalPossibleScore());
     }
+
+    public static bool canSkipTitle = false;
 
     //collectables
     public static int lives = 3;

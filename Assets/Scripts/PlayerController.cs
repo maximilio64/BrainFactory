@@ -20,6 +20,18 @@ public class PlayerController : MonoBehaviour
     public AudioClip before;
     public AudioClip after;
 
+    public AudioClip mushroom;
+    public AudioClip aura;
+    public AudioClip click;
+    public AudioClip death;
+    public AudioClip hurt;
+    public AudioClip jump1;
+    public AudioClip jump2;
+    public AudioClip bamboo;
+    public AudioClip power;
+
+    public AudioSource soundEffectSource;
+
     public Transform leftFootCheck;
     public Transform rightFootCheck;
     public Transform forwardCheck;
@@ -55,7 +67,9 @@ public class PlayerController : MonoBehaviour
         cameraRotator = transform.Find("CameraRotator").transform;
         cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
 
-        if (SceneManager.GetActiveScene().name == "Brain" && SaveData.Ratio() >= 1)
+        soundEffectSource = transform.Find("Sound").GetComponent<AudioSource>();
+
+        if (SceneManager.GetActiveScene().name == "Brain" && SaveData.Ratio2() >= 1)
         {
             GetComponent<AudioSource>().clip = after;
             GetComponent<AudioSource>().Play();
@@ -75,6 +89,14 @@ public class PlayerController : MonoBehaviour
     IEnumerator LateStart()
     {
         yield return null;
+
+        if (SaveData.playerBrainStartLoc.x == -87.8170776f)
+        {
+            if (SaveData.Ratio2() < 1f)
+                FindObjectOfType<DialogueBox>().AddDialogue("I'm off to a great start, but I still have some work to do here to clean up my brain even more.", false);
+            else
+                FindObjectOfType<DialogueBox>().AddDialogue("I still need to work on myself some more, but for now I think I'm doing great. My brain is once again bustling with activity!", false);
+        }
 
         switch (SceneManager.GetActiveScene().name)
         {
@@ -122,6 +144,31 @@ public class PlayerController : MonoBehaviour
 
     int explodeNum = 0;
 
+    private void CreateExplosion()
+    {
+        GameObject e = Instantiate(explosion);
+        e.GetComponent<Explosion>().SetID(explodeNum);
+        explodeNum++;
+        e.transform.SetParent(this.transform);
+        e.transform.localPosition = new Vector3(0, 1f, 0);
+        soundEffectSource.PlayOneShot(aura);
+    }
+
+    IEnumerator DelayedExplosion()
+    {
+        yield return new WaitForSeconds(0.4f);
+        CreateExplosion();
+    }
+
+    public void HurtSound()
+    {
+        soundEffectSource.PlayOneShot(hurt);
+    }
+    public void DeathSound()
+    {
+        soundEffectSource.PlayOneShot(death);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -129,6 +176,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            soundEffectSource.PlayOneShot(click);
             if (SceneManager.GetActiveScene().name == "Brain")
                 SceneManager.LoadScene("Title");
             else
@@ -145,12 +193,9 @@ public class PlayerController : MonoBehaviour
         if (powerupCoolDown <= 0 && SaveData.hasAttackPower && Input.GetKeyDown("e"))
         {
             powerupCoolDown = 5;
-            GameObject e = Instantiate(explosion);
-            e.GetComponent<Explosion>().SetID(explodeNum);
-            Debug.Log(explodeNum);
-            explodeNum++;
-            e.transform.SetParent(this.transform);
-            e.transform.localPosition = new Vector3(0, 1f, 0);
+            CreateExplosion();
+            if (SaveData.hasAttackPowerUpgrade)
+                StartCoroutine(DelayedExplosion());
         }
         if (powerupCoolDown <= 0 && SaveData.hasPlatformPower && Input.GetKeyDown("q"))
         {
@@ -160,6 +205,9 @@ public class PlayerController : MonoBehaviour
             e.transform.rotation = meshTransform.localRotation;
             e.transform.position += e.transform.forward * 10;
 
+            if (SaveData.hasPlatformPowerUpgrade)
+                e.transform.localScale = new Vector3(6.4f, -0.62f, 8.4f);
+
             //animator.SetTrigger("sew");
         }
         if (Input.GetKeyDown("l") && SaveData.orbs > 0 && SceneManager.GetActiveScene().name == "Dark")
@@ -167,6 +215,7 @@ public class PlayerController : MonoBehaviour
             GameObject orb = Instantiate(placedOrbPrefab);
             orb.transform.position = meshTransform.transform.position + new Vector3(0, 5, 0);
             control.ChangeOrbs(-1);
+            soundEffectSource.PlayOneShot(click);
             SaveData.usedOrbs++;
         }
 
@@ -182,7 +231,7 @@ public class PlayerController : MonoBehaviour
             direction.y = 30;
             animator.SetTrigger("Jump");
             ableToMakeADoubleJump = true;
-            meshTransform.GetComponent<AudioSource>().Play();
+            soundEffectSource.PlayOneShot(mushroom);
         }
 
         if (BothFeetOnGround())
@@ -198,6 +247,7 @@ public class PlayerController : MonoBehaviour
             {
                 direction.y = jumpForce;
                 animator.SetTrigger("Jump");
+                soundEffectSource.PlayOneShot(jump1);
 
             }
         } else
@@ -207,6 +257,7 @@ public class PlayerController : MonoBehaviour
             {
                 direction.y = jumpForce;
                 animator.SetTrigger("Jump");
+                soundEffectSource.PlayOneShot(jump2);
                 ableToMakeADoubleJump = false;
             }
         }
