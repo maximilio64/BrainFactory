@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{90557767-1450-C198-0199-85AE3DC03E1E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SaveData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/StandInTheSun.cs">
     <Files>
       <File FileName="Assets/MazeGenerator/Scripts/MazeSpawner.cs" Line="18" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/Conveyer.cs" />
-      <File FileName="Assets/Scripts/PlayerController.cs" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="80" Column="10" />
       <File FileName="Assets/Scripts/Control.cs" />
       <File FileName="Assets/Scripts/DialogueBox.cs" />
       <File FileName="Assets/Scripts/CameraMovement.cs" />
@@ -31,7 +31,7 @@
       <File FileName="Assets/Scripts/BrainChange/Change.cs" />
       <File FileName="Assets/Scripts/BrainChange/Lightbulb.cs" />
       <File FileName="Assets/Scripts/DoorOpen.cs" />
-      <File FileName="Assets/Scripts/BrainChange/Gear.cs" Line="23" Column="73" />
+      <File FileName="Assets/Scripts/BrainChange/Gear.cs" />
       <File FileName="Assets/Scripts/BrainChange/Eye.cs" />
       <File FileName="Assets/Scripts/Clocks/PlayerTicker.cs" />
       <File FileName="Assets/MazeGenerator/Prefabs/WallCutter.cs" />
@@ -44,6 +44,7 @@
       <File FileName="Assets/Scripts/ExportTerrain.cs" />
       <File FileName="Assets/Scripts/DialogueCue/DialogueCueIfHaveEnough.cs" />
       <File FileName="Assets/Scripts/DialogueCue/DialogueCue.cs" />
+      <File FileName="Assets/StandInTheSun.cs" Line="11" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -52,9 +53,7 @@
             <Node name="Assets" expanded="True">
               <Node name="MazeGenerator" expanded="True">
                 <Node name="Prefabs" expanded="True" />
-                <Node name="Scripts" expanded="True">
-                  <Node name="MazeSpawner.cs" selected="True" />
-                </Node>
+                <Node name="Scripts" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="BrainChange" expanded="True" />
@@ -62,6 +61,7 @@
                 <Node name="CoinTimeChallenge" expanded="True" />
                 <Node name="DialogueCue" expanded="True" />
               </Node>
+              <Node name="StandInTheSun.cs" selected="True" />
             </Node>
           </Node>
         </State>

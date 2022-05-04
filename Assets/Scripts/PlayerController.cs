@@ -69,26 +69,34 @@ public class PlayerController : MonoBehaviour
 
         soundEffectSource = transform.Find("Sound").GetComponent<AudioSource>();
 
-        if (SceneManager.GetActiveScene().name == "Brain" && SaveData.Ratio2() >= 1)
-        {
-            GetComponent<AudioSource>().clip = after;
-            GetComponent<AudioSource>().Play();
-        } else if (SceneManager.GetActiveScene().name == "Mushroom" && SaveData.hasAttackPower)
-        {
-            GetComponent<AudioSource>().clip = after;
-            GetComponent<AudioSource>().Play();
-        } else if (SceneManager.GetActiveScene().name == "Desert" && SaveData.hasPlatformPower)
-        {
-            GetComponent<AudioSource>().clip = after;
-            GetComponent<AudioSource>().Play();
-        }
-
         StartCoroutine(LateStart());
     }
 
     IEnumerator LateStart()
     {
         yield return null;
+
+        if (SceneManager.GetActiveScene().name == "Dark")
+        {
+            GetComponent<AudioSource>().clip = null;
+            GetComponent<AudioSource>().Play();
+        }
+
+        if (SceneManager.GetActiveScene().name == "Brain" && SaveData.Ratio2() >= 1)
+        {
+            GetComponent<AudioSource>().clip = after;
+            GetComponent<AudioSource>().Play();
+        }
+        else if (SceneManager.GetActiveScene().name == "Mushroom" && SaveData.hasAttackPower)
+        {
+            GetComponent<AudioSource>().clip = after;
+            GetComponent<AudioSource>().Play();
+        }
+        else if (SceneManager.GetActiveScene().name == "Desert" && SaveData.hasPlatformPower)
+        {
+            GetComponent<AudioSource>().clip = after;
+            GetComponent<AudioSource>().Play();
+        }
 
         if (SaveData.playerBrainStartLoc.x == -87.8170776f)
         {
