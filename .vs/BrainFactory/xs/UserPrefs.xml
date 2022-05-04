@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{90557767-1450-C198-0199-85AE3DC03E1E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/StandInTheSun.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
       <File FileName="Assets/MazeGenerator/Scripts/MazeSpawner.cs" Line="18" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/Conveyer.cs" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="80" Column="10" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="73" Column="49" />
       <File FileName="Assets/Scripts/Control.cs" />
       <File FileName="Assets/Scripts/DialogueBox.cs" />
       <File FileName="Assets/Scripts/CameraMovement.cs" />
@@ -27,7 +27,7 @@
       <File FileName="Assets/Scripts/Powerup.cs" />
       <File FileName="Assets/MazeGenerator/Scripts/MazeCell.cs" />
       <File FileName="Assets/MazeGenerator/Prefabs/FloorSpawner.cs" />
-      <File FileName="Assets/Scripts/SaveData.cs" Line="35" Column="23" />
+      <File FileName="Assets/Scripts/SaveData.cs" />
       <File FileName="Assets/Scripts/BrainChange/Change.cs" />
       <File FileName="Assets/Scripts/BrainChange/Lightbulb.cs" />
       <File FileName="Assets/Scripts/DoorOpen.cs" />
@@ -53,7 +53,9 @@
             <Node name="Assets" expanded="True">
               <Node name="MazeGenerator" expanded="True">
                 <Node name="Prefabs" expanded="True" />
-                <Node name="Scripts" expanded="True" />
+                <Node name="Scripts" expanded="True">
+                  <Node name="MazeSpawner.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="BrainChange" expanded="True" />
@@ -61,7 +63,6 @@
                 <Node name="CoinTimeChallenge" expanded="True" />
                 <Node name="DialogueCue" expanded="True" />
               </Node>
-              <Node name="StandInTheSun.cs" selected="True" />
             </Node>
           </Node>
         </State>

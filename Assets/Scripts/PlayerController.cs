@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip jump2;
     public AudioClip bamboo;
     public AudioClip power;
+    public AudioClip portalDest;
 
     public AudioSource soundEffectSource;
 
@@ -68,6 +69,8 @@ public class PlayerController : MonoBehaviour
         cameraRotatorDummy = transform.Find("CameraRotatorDummy").transform;
 
         soundEffectSource = transform.Find("Sound").GetComponent<AudioSource>();
+
+        soundEffectSource.PlayOneShot(portalDest);
 
         StartCoroutine(LateStart());
     }

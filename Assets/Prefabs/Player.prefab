@@ -807,6 +807,7 @@ MonoBehaviour:
   jump2: {fileID: 8300000, guid: 7934b7ff8e9cb4e3d9ebda0251a0f005, type: 3}
   bamboo: {fileID: 8300000, guid: a66c1bcb49ed44dcb820907e57bfd311, type: 3}
   power: {fileID: 8300000, guid: 947bac34133294db4abe23dd3eec2692, type: 3}
+  portalDest: {fileID: 8300000, guid: 67c005b29b1294ed98d6546465ba5cc6, type: 3}
   soundEffectSource: {fileID: 0}
   leftFootCheck: {fileID: 1328044290988308343}
   rightFootCheck: {fileID: 1328044291395424764}
