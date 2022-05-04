@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip bamboo;
     public AudioClip power;
     public AudioClip portalDest;
+
+    public Slider cooldown;
 
     public AudioSource soundEffectSource;
 
@@ -223,6 +226,13 @@ public class PlayerController : MonoBehaviour
 
             //animator.SetTrigger("sew");
         }
+
+        if (powerupCoolDown == 0 || (!SaveData.hasAttackPower && !SaveData.hasPlatformPower))
+            cooldown.gameObject.SetActive(false);
+        else
+            cooldown.gameObject.SetActive(true);
+        cooldown.value = powerupCoolDown;
+
         if (Input.GetKeyDown("l") && SaveData.orbs > 0 && SceneManager.GetActiveScene().name == "Dark")
         {
             GameObject orb = Instantiate(placedOrbPrefab);
