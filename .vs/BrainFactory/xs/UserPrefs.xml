@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{90557767-1450-C198-0199-85AE3DC03E1E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BrainChange/Gear.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SaveData.cs">
     <Files>
       <File FileName="Assets/MazeGenerator/Scripts/MazeSpawner.cs" Line="18" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/Conveyer.cs" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="101" Column="52" />
-      <File FileName="Assets/Scripts/Control.cs" Line="17" Column="54" />
-      <File FileName="Assets/Scripts/DialogueBox.cs" Line="17" Column="22" />
+      <File FileName="Assets/Scripts/PlayerController.cs" />
+      <File FileName="Assets/Scripts/Control.cs" />
+      <File FileName="Assets/Scripts/DialogueBox.cs" />
       <File FileName="Assets/Scripts/CameraMovement.cs" />
       <File FileName="Assets/Scripts/EnemyFollow.cs" />
       <File FileName="Assets/Scripts/Explosion.cs" />
       <File FileName="Assets/Scripts/FlyingEnemy.cs" />
       <File FileName="Assets/Scripts/Enemy.cs" />
-      <File FileName="Assets/Scripts/MovingPlatform.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SC_MovingPlatform.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Worm.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Clocks/Clock.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Clocks/Ticker.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Clocks/Tick.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MovingPlatform.cs" />
+      <File FileName="Assets/Scripts/SC_MovingPlatform.cs" />
+      <File FileName="Assets/Scripts/Worm.cs" />
+      <File FileName="Assets/Scripts/Clocks/Clock.cs" />
+      <File FileName="Assets/Scripts/Clocks/Ticker.cs" />
+      <File FileName="Assets/Scripts/Clocks/Tick.cs" />
       <File FileName="Assets/Scripts/CoinTimeChallenge/CoinTimeChallenge.cs" />
       <File FileName="Assets/Scripts/PlatformPower.cs" />
       <File FileName="Assets/Scripts/InverseMesh/AddInvertedMeshCollider.cs" />
@@ -27,7 +27,7 @@
       <File FileName="Assets/Scripts/Powerup.cs" />
       <File FileName="Assets/MazeGenerator/Scripts/MazeCell.cs" />
       <File FileName="Assets/MazeGenerator/Prefabs/FloorSpawner.cs" />
-      <File FileName="Assets/Scripts/SaveData.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/SaveData.cs" Line="35" Column="23" />
       <File FileName="Assets/Scripts/BrainChange/Change.cs" />
       <File FileName="Assets/Scripts/BrainChange/Lightbulb.cs" />
       <File FileName="Assets/Scripts/DoorOpen.cs" />
@@ -38,12 +38,12 @@
       <File FileName="Assets/Scripts/LineOfSightEnemyFollow.cs" />
       <File FileName="Assets/Scripts/JunkSpawner.cs" />
       <File FileName="Assets/Scripts/Portal.cs" />
-      <File FileName="Assets/Scripts/Title.cs" Line="27" Column="10" />
-      <File FileName="Assets/Scripts/WaitForCredits.cs" Line="24" Column="52" />
+      <File FileName="Assets/Scripts/Title.cs" />
+      <File FileName="Assets/Scripts/WaitForCredits.cs" />
       <File FileName="Assets/Scripts/FloatUpAndDown.cs" />
       <File FileName="Assets/Scripts/ExportTerrain.cs" />
       <File FileName="Assets/Scripts/DialogueCue/DialogueCueIfHaveEnough.cs" />
-      <File FileName="Assets/Scripts/DialogueCue/DialogueCue.cs" Line="27" Column="1" />
+      <File FileName="Assets/Scripts/DialogueCue/DialogueCue.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -52,12 +52,12 @@
             <Node name="Assets" expanded="True">
               <Node name="MazeGenerator" expanded="True">
                 <Node name="Prefabs" expanded="True" />
-                <Node name="Scripts" expanded="True" />
+                <Node name="Scripts" expanded="True">
+                  <Node name="MazeSpawner.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="BrainChange" expanded="True">
-                  <Node name="Gear.cs" selected="True" />
-                </Node>
+                <Node name="BrainChange" expanded="True" />
                 <Node name="Clocks" expanded="True" />
                 <Node name="CoinTimeChallenge" expanded="True" />
                 <Node name="DialogueCue" expanded="True" />
